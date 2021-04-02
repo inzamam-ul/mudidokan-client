@@ -85,14 +85,15 @@ const Shiping = () => {
                 {errors.address && <p>This field is required</p>}
               </div>
 
-              <div className="col-6 py-2"></div>
+              <div className="col-6 py-2">
+                <input
+                  className="rouded mt-5 shadow float-right"
+                  type="submit"
+                  value="Place Order"
+                />
+              </div>
             </form>
           </div>
-          <input
-            className="rouded mt-5 shadow float-right"
-            type="submit"
-            value="Place Order"
-          />
         </div>
       )}
     </>

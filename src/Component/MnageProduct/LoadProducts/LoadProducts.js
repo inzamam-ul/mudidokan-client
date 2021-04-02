@@ -27,9 +27,9 @@ const LoadProducts = (props) => {
       <li className="list-group-item row rounded border mt-1 d-flex justify-content-between align-items-start">
         {!updateStatus ? (
           <>
-            <div className="d-flex justify-content-between col-md-5 align-items-center">
+            <div className="d-flex justify-content-start col-md-5 align-items-center">
               <img className="manage-image" src={imgUrl} alt="" />
-              <div className="ms-2 text-left me-auto">
+              <div className="ml-4 text-left me-auto">
                 <h6 className="fw-bold text-capitalize">{name}</h6>
                 <p className="fw-bold m-0">Price: {price} tk</p>
                 <p className="fw-bold">Weight: {weight} kg</p>
