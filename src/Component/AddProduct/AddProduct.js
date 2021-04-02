@@ -13,7 +13,7 @@ const AddProduct = () => {
   const onSubmit = (data, e) => {
     const newData = { ...data, imgUrl };
     console.log(newData);
-    const url = "http://localhost:5050/addProduct";
+    const url = "https://mudi-dokan.herokuapp.com/addProduct";
 
     axios.post(url, newData).then((res) => {
       console.log(res.data);
@@ -100,7 +100,7 @@ const AddProduct = () => {
             {/* <img src={lodinggif} alt="/" /> */}
             {imgUploaded === true && <span>✔️</span>}
             {imgUploaded === "loading" && (
-              <img className="gif" src={lodinggif} alt="/" />
+              <img className="gif-upload" src={lodinggif} alt="/" />
             )}
           </div>
 

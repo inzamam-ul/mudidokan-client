@@ -15,3 +15,19 @@
 .is-active {
   background-color: aliceblue;
 }
+@media (max-width: 768px) {
+  .admin-bar {
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .admin-menu {
+    flex-direction: row !important;
+    flex-wrap: nowrap;
+    align-items: flex-end !important;
+  }
+  .gif {
+    margin-top: 2rem !important;
+  }
+}

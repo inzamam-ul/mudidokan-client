@@ -1,0 +1,18 @@
+.gif {
+  height: 160px;
+  margin-top: 8rem;
+}
+.home-gif {
+  height: 160px;
+  margin-top: 8rem;
+}
+
+@media (max-width: 768px) {
+  .home-gif {
+    height: 100px;
+    margin-top: 9rem;
+  }
+  .gif {
+    height: 100px;
+  }
+}

@@ -13,16 +13,18 @@ const Update = ({ id, setUpdatestatus, setCurrentData }) => {
 
   const [productImgUrl, setproductImageUrl] = useState(null);
   useEffect(() => {
-    axios.get(`http://localhost:5050/singleProduct/${id}`).then((res) => {
-      console.log(res.data);
-      setSingleProductData(res.data);
-      setproductImageUrl(res.data.imgUrl);
-    });
+    axios
+      .get(`https://mudi-dokan.herokuapp.com/singleProduct/${id}`)
+      .then((res) => {
+        console.log(res.data);
+        setSingleProductData(res.data);
+        setproductImageUrl(res.data.imgUrl);
+      });
   }, [id]);
 
   const onSubmit = (data) => {
     const newData = { ...data, imgUrl: productImgUrl };
-    const url = `http://localhost:5050/updateProduct/${id}`;
+    const url = `https://mudi-dokan.herokuapp.com/updateProduct/${id}`;
     axios.patch(url, newData).then((res) => {
       setUpdatestatus(false);
       setImageUploaded(null);
@@ -104,14 +106,15 @@ const Update = ({ id, setUpdatestatus, setCurrentData }) => {
             />
             {imgUploaded === true && <span>✔️</span>}
             {imgUploaded === "loading" && (
-              <img className="gif" src={lodinggif} alt="/" />
+              <img className="gif-upload" src={lodinggif} alt="/" />
             )}
           </div>
-
+        </div>
+        <div className="col-6 py-2 d-flex justify-content-end ml-auto">
           <button
             type="submit"
             onClick={() => setUpdatestatus(false)}
-            className="rounded btn-outline-dark cancle"
+            className="rounded mx-3 btn-outline-dark cancle"
           >
             Cancle
           </button>

@@ -11,9 +11,11 @@ const Shiping = () => {
   const [orderStatus, setOrderStatus] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState({});
   useEffect(() => {
-    axios.get(`http://localhost:5050/singleProduct/${id}`).then((res) => {
-      setSelectedProduct(res.data);
-    });
+    axios
+      .get(`https://mudi-dokan.herokuapp.com/singleProduct/${id}`)
+      .then((res) => {
+        setSelectedProduct(res.data);
+      });
   }, [id]);
 
   const { register, handleSubmit, errors } = useForm();
@@ -25,7 +27,7 @@ const Shiping = () => {
       date: new Date().toUTCString(),
       orderedProduct: selectedProduct,
     };
-    const url = "http://localhost:5050/placeOrder";
+    const url = "https://mudi-dokan.herokuapp.com/placeOrder";
 
     axios.post(url, newData).then((res) => {
       console.log(res.data);
@@ -39,8 +41,8 @@ const Shiping = () => {
         <OrderPlaced selectedProduct={selectedProduct} />
       ) : (
         <div className="container">
-          <h3 className="mt-4">Shiping address</h3>
-          <div className="bg-light p-3 rounded text-left">
+          <h3 className="my-4">Shiping address</h3>
+          <div className="bg-light shadow p-3 rounded text-left">
             <form
               className="my-3 p-3 rounded row gy-5"
               onSubmit={handleSubmit(onSubmit)}
@@ -83,11 +85,14 @@ const Shiping = () => {
                 {errors.address && <p>This field is required</p>}
               </div>
 
-              <div className="col-6 py-2">
-                <input className="rouded" type="submit" value="SAVE" />
-              </div>
+              <div className="col-6 py-2"></div>
             </form>
           </div>
+          <input
+            className="rouded mt-5 shadow float-right"
+            type="submit"
+            value="Place Order"
+          />
         </div>
       )}
     </>

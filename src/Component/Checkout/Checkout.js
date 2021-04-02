@@ -9,12 +9,12 @@ const Checkout = () => {
   const [checkout, setCheckout] = useState({});
   useEffect(() => {
     axios
-      .get(`http://localhost:5050/singleProduct/${productId}`)
+      .get(`https://mudi-dokan.herokuapp.com/singleProduct/${productId}`)
       .then((res) => {
         setCheckout(res.data);
       });
   }, [productId]);
-  const { name, price, weight, imgUrl, _id } = checkout;
+  const { name, price, weight, _id } = checkout;
   return (
     <div className="container text-left">
       <h3 className="mt-5">Checkout</h3>

@@ -27,9 +27,9 @@ function App() {
               <Header />
               <Login />
             </Route>
-            <Route path="/admin">
+            <PrivetRoute path="/admin">
               <Admin />
-            </Route>
+            </PrivetRoute>
             <Route path="/buy/:product/:id">
               <Header />
               <Checkout />
@@ -38,10 +38,10 @@ function App() {
               <Header />
               <Shiping />
             </Route>
-            <Route path="/orders">
+            <PrivetRoute path="/orders">
               <Header />
               <Orders />
-            </Route>
+            </PrivetRoute>
             <Route path="*">
               <h2>NOT found</h2>
             </Route>

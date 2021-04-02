@@ -11,6 +11,9 @@ input[type="file"] {
   padding: 10px;
   color: white;
 }
-.gif {
-  height: 45px;
+@media (max-width: 768px) {
+  input[type="file"] {
+    background-color: white;
+    width: 150px;
+  }
 }
