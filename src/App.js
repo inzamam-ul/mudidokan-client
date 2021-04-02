@@ -30,10 +30,10 @@ function App() {
             <PrivetRoute path="/admin">
               <Admin />
             </PrivetRoute>
-            <Route path="/buy/:product/:id">
+            <PrivetRoute path="/buy/:product/:id">
               <Header />
               <Checkout />
-            </Route>
+            </PrivetRoute>
             <Route path="/checkout/:product/:id">
               <Header />
               <Shiping />

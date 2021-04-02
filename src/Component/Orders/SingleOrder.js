@@ -2,7 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 
 const SingleOrder = ({ data }) => {
-  const { name, price, weight, imgUrl, _id } = data.orderedProduct;
+  const { name, price, weight, imgUrl } = data.orderedProduct;
   return (
     <div className="col-md-3 my-3">
       <Card className="shadow">
