@@ -1,0 +1,17 @@
+.brand-admin {
+  color: #000;
+}
+.admin-bar {
+  height: 100vh;
+}
+.admin-menu a {
+  width: 100%;
+  padding-left: 50px;
+}
+.admin-menu a:hover {
+  background-color: white;
+  transition: all 0.4s;
+}
+.is-active {
+  background-color: aliceblue;
+}

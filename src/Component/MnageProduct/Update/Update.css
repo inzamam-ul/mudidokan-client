@@ -1,0 +1,11 @@
+.cancle {
+  background: #ec5990;
+  color: white;
+  text-transform: capitalize;
+  border: none;
+  margin-top: 5px;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}

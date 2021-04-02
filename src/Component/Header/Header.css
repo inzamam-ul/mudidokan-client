@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap");
+
+.header a {
+  font-weight: 600 !important;
+  color: black !important;
+}
+.btn-custom {
+  background-color: #ec5990 !important;
+  color: white !important;
+}
+.header button {
+  font-weight: 600 !important;
+}
+.brand {
+  font-weight: 800 !important;
+  font-family: "Hachi Maru Pop", cursive;
+}
+.logout {
+  margin-left: 10px;
+}
+@media (max-width: 780px) {
+  .logout {
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+}

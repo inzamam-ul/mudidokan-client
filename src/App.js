@@ -1,23 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./Component/Header/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Login from "./Component/Login/Login";
+import { createContext, useState } from "react";
+import PrivetRoute from "./Component/PrivetRoute/PrivetRoute";
+import Admin from "./Component/Admin/Admin";
+import Home from "./Component/Home/Home";
+import Checkout from "./Component/Checkout/Checkout";
+import Shiping from "./Component/Shiping/Shiping";
+import Orders from "./Component/Orders/Orders";
+export const UserContext = createContext();
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
+        <Router>
+          <Switch>
+            <Route exact path="/">
+              <Header />
+              <Home />
+            </Route>
+            <Route path="/login">
+              <Header />
+              <Login />
+            </Route>
+            <Route path="/admin">
+              <Admin />
+            </Route>
+            <Route path="/buy/:product/:id">
+              <Header />
+              <Checkout />
+            </Route>
+            <Route path="/checkout/:product/:id">
+              <Header />
+              <Shiping />
+            </Route>
+            <Route path="/orders">
+              <Header />
+              <Orders />
+            </Route>
+            <Route path="*">
+              <h2>NOT found</h2>
+            </Route>
+          </Switch>
+        </Router>
+      </UserContext.Provider>
     </div>
   );
 }
