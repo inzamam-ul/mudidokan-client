@@ -16,6 +16,7 @@ const Orders = () => {
   }, [email]);
   return (
     <Container>
+      <h4>You orderd {orders.length} product</h4>
       {orders.length === 0 && (
         <img className="home-gif" src={loadingGif} alt="" />
       )}
