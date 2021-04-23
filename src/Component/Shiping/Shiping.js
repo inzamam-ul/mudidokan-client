@@ -21,18 +21,19 @@ const Shiping = () => {
   const { register, handleSubmit, errors } = useForm();
   //   console.log(loggedInUser);
   const onSubmit = (data) => {
-    const newData = {
-      email: loggedInUser.email,
-      address: data,
-      date: new Date().toUTCString(),
-      orderedProduct: selectedProduct,
-    };
-    const url = "https://mudi-dokan.herokuapp.com/placeOrder";
+    setOrderStatus(true);
+    // const newData = {
+    //   email: loggedInUser.email,
+    //   address: data,
+    //   date: new Date().toUTCString(),
+    //   orderedProduct: selectedProduct,
+    // };
+    // const url = "https://mudi-dokan.herokuapp.com/placeOrder";
 
-    axios.post(url, newData).then((res) => {
-      console.log(res.data);
-      setOrderStatus(true);
-    });
+    // axios.post(url, newData).then((res) => {
+    //   console.log(res.data);
+    //   setOrderStatus(true);
+    // });
   };
 
   return (

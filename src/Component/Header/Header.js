@@ -6,6 +6,7 @@ import "./Header.css";
 
 const Header = () => {
   const { loggedInUser, setLoggedInUser } = useContext(UserContext);
+  console.log(loggedInUser);
   return (
     <div className="bg-light">
       <Navbar className="container" expand="lg">
@@ -29,6 +30,11 @@ const Header = () => {
 
             {loggedInUser.email ? (
               <span className="rounded p-2 bg-light">
+                <img
+                  style={{ height: 40, borderRadius: 50 }}
+                  src={loggedInUser.picture}
+                  alt=""
+                />
                 Welcome, {loggedInUser.displayName || loggedInUser.name}
               </span>
             ) : (
